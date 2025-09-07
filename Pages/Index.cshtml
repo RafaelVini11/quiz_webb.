@@ -1,0 +1,117 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem vindo ao quiz</h1>
+    <p>As regras são simples acerte o maximo que conseguir.</p>
+</div>
+<div>
+    <label> 
+        <p>1-Quantas copas o Brasil tem</p>
+        <input type="radio" name="opcao" value="1" />a)1<br>
+        <input type="radio" name="opcao" value="2" />b)6<br>
+        <input type="radio" name="opcao" value="3" />c)5<br>
+        <input type="radio" name="opcao" value="4" />d)7<br>
+    </label>
+    <br></br>
+   
+
+    <label>
+        <p>2-Qual o ano da primeria copa do mundo?</p> 
+        <input type="radio" name="opcao2" value="1">a)1936</input> <br>
+        <input type="radio" name="opcao2" value="2">b)1930</input> <br>
+        <input type="radio" name="opcao2" value="3">c)1946</input> <br>
+        <input type="radio" name="opcao2" value="4">d)1934</input> <br>
+    </label>
+    <br></br>
+    <label>
+        <p>3-Quantos mundial o Palmeiras tem</p>
+        <input type="radio" name="opcao3" value="1">a)0</input> <br>
+        <input type="radio" name="opcao3" value="2">b)Nenhum</input> <br>
+        <input type="radio" name="opcao3" value="3">c)Nunca ganhou</input> <br>
+        <input type="radio" name="opcao3" value="4">d)todas as opções acima</input> <br>
+    </label>
+    <br></br>
+    <label>
+        <p>4-Quem foi o primeiro time br a ganhar a libertadores</p>
+        <input type="radio" name="opcao4" value="1">a)Santos</input> <br>
+        <input type="radio" name="opcao4" value="2">b)Sao paulo</input> <br>
+        <input type="radio" name="opcao4" value="3">c)Corinthians</input> <br>
+        <input type="radio" name="opcao4" value="4">d)Palmeiras</input> <br>
+    </label>
+    <br></br>
+    <label>
+        <p>5-Qual  é o pais com mais copa do mundo</p>
+        <input type="radio" name="opcao5" value="1">a)Alemanha</input> <br>
+        <input type="radio" name="opcao5" value="2">b)Italia</input> <br>
+        <input type="radio" name="opcao5" value="3">c)Argentina</input> <br>
+        <input type="radio" name="opcao5" value="4">d)Brasil</input> <br>
+    </label>
+    <br></br>
+    <button onclick="verificar()">enviar</button>
+
+    
+    
+    
+    <p id="ponto"></p>
+    
+
+    <script>
+      
+        function verificar(){
+                  var mensagem="";
+        var escolhido = document.querySelector('input[name="opcao"]:checked');
+        var escolhido2 = document.querySelector('input[name="opcao2"]:checked');
+        var escolhido3 = document.querySelector('input[name="opcao3"]:checked');
+        var escolhido4 = document.querySelector('input[name="opcao4"]:checked');
+        var escolhido5 = document.querySelector('input[name="opcao5"]:checked');
+        if(escolhido){
+            if(escolhido.value ==='3'){
+                mensagem+="Voce acertou a questao 1<br>";
+          
+            }else{
+                mensagem+= "Voce errou a questao 1<br>";
+            }
+
+        }
+    if(escolhido2){
+        if(escolhido2.value==='2'){
+                   mensagem+="Voce acertou a questao 2<br>";
+        
+        }else{
+                    mensagem+= "Voce errou a questao 2<br>";
+        }
+    }
+        if(escolhido3){ 
+            if(escolhido3.value==='4'){
+                mensagem+="Voce acertou a questao 3<br>"; }
+            else{
+                    mensagem+="Voce errou a questao 3<br>"; }
+
+            }
+         if(escolhido4){
+            if(escolhido4.value==='1'){
+                mensagem+="Voce acertou a questao 4<br>"; }
+            else{
+                    mensagem+="Voce errou a questao 4<br>"; }
+
+            }
+             if(escolhido5){
+                if(escolhido5.value==='4'){
+                    mensagem+="Voce acertou a questao 5<br>"; }
+                else{
+                        mensagem+="Voce errou a questao 5<br>"; }
+
+            }
+         document.getElementById("aparecerMensagem").innerHTML= mensagem;
+             var mensagem="";
+        }
+        
+         
+
+    </script>
+    <p id="aparecerMensagem"> </p>
+</div>
